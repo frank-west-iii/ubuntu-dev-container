@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  devbox:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: alpine-dev-box
+    ports:
+      - "2222:22"
+    volumes:
+      - dev-home:/home/dev
+    restart: unless-stopped
+    labels:
+      - coolify.managed=true
+
+volumes:
+  dev-home:
+    driver: local
