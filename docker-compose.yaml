@@ -5,7 +5,7 @@ services:
       dockerfile: Dockerfile
     container_name: ${COMPOSE_PROJECT_NAME:-ubuntu-dev-box}
     ports:
-      - "2222:22"
+      - "2224:22"
     volumes:
       - dev-home:/home/dev
     restart: unless-stopped
